@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meals_app/models/meal.dart';
+import 'package:meals_app/widgets/meal_item_trait.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class MealItem extends StatelessWidget {
@@ -13,6 +14,10 @@ class MealItem extends StatelessWidget {
   @override
   Widget build(context) {
     return Card(
+      margin: const EdgeInsets.all(8),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      clipBehavior: Clip.hardEdge,
+      elevation: 2,
       child: InkWell(
         onTap: () {},
         child: Stack(
@@ -20,6 +25,9 @@ class MealItem extends StatelessWidget {
             FadeInImage(
               placeholder: MemoryImage(kTransparentImage),
               image: NetworkImage(meal.imageUrl),
+              fit: BoxFit.cover,
+              height: 200,
+              width: double.infinity,
             ),
             Positioned(
               left: 0,
@@ -49,7 +57,10 @@ class MealItem extends StatelessWidget {
                       height: 12,
                     ),
                     Row(
-                      children: [],
+                      children: [
+                        MealItemTrait(
+                            icon: Icons.schedule, label: '${meal.duration} min')
+                      ],
                     )
                   ],
                 ),
