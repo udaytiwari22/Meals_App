@@ -21,11 +21,13 @@ class _TabsScreenState extends State<TabsScreen> {
 
   @override
   Widget build(context) {
-    var activePageTitle='Categories';
+
     Widget activePage = const CategoriesScreen();
+    var activePageTitle = 'Categories';
+
     if (_selectedPageIndex == 1) {
-      activePage = const MealsScreen(meals:[] , title: 'Favorites');
-      activePageTitle='Your Favorites';
+      activePage = const MealsScreen(meals: [], title: 'Favorites');
+      activePageTitle = 'Your Favorites';
     }
 
     return Scaffold(
@@ -34,11 +36,12 @@ class _TabsScreenState extends State<TabsScreen> {
       ),
       body: activePage,
       bottomNavigationBar: BottomNavigationBar(
-        onTap: (index) {},
+        onTap: _selectedPage,
         items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.set_meal), label: 'Categories'),
-          BottomNavigationBarItem(icon: Icon(Icons.star), label: 'Favorites'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.star), label: ' Favorites'),
         ],
       ),
     );
