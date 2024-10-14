@@ -18,11 +18,9 @@ class _TabsScreenState extends State<TabsScreen> {
   final List<Meal> _favoriteMeals = [];
   void _showInfoMessage(String message) {
     ScaffoldMessenger.of(context).clearSnackBars();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-      ),
-    );
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(message),
+    ));
   }
 
   void _toggleMealFavoriteStatus(Meal meal) {
@@ -50,7 +48,6 @@ class _TabsScreenState extends State<TabsScreen> {
   void _setScreen(String identifier) {
     Navigator.of(context).pop();
     if (identifier == 'filters') {
-      
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (ctx) => const FilterScreen(),
