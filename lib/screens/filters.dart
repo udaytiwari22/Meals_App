@@ -27,12 +27,10 @@ class FilterScreen extends ConsumerWidget {
                   .read(filtersNotifier.notifier)
                   .setFilter(Filter.glutenFree, isChecked);
             },
-            title: Text(
-              'Gluten-free',
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    color: Theme.of(context).colorScheme.onSurface,
-                  ),
-            ),
+            title: Text('Gluten-free',
+                style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                      color: Theme.of(context).colorScheme.onSurface,
+                    )),
             subtitle: Text(
               'Only Include gluten-free meals.',
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
